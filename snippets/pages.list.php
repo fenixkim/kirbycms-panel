@@ -15,8 +15,10 @@ if($settings->flip && $type == 'visible') $children = $children->flip();
     <?php else: ?>
     <a href="<?php echo dourl('content', 'delete-page') ?>/?uid=<?php echo $child->uid() ?>" class="remove"><?php echo l::get('pages.delete') ?></a>
     <?php endif ?>
-
-    <a href="<?php echo $child->url() ?>" class="title"><?php echo html(($child->title() != '') ? $child->title() : $child->uid()) ?></a>
+    
+    <?php $code = (string)$child->code() ? $child->code().' - ' : ''; ?>
+    
+    <a href="<?php echo $child->url() ?>" class="title"><?php echo html(($child->title() != '') ? $code.$child->title() : $code.$child->uid()) ?></a>
   </li>
   <?php $n++; endforeach ?>
   <li class="empty<?php echo ($n>0) ? ' hide' : '' ?>"><em><?php echo l::get('pages.no.' . $type) ?></em></li>

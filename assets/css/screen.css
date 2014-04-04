@@ -891,7 +891,14 @@ body:before {
   -moz-border-radius: 5px;
   border-radius: 5px;
   color: #fff;
-  border: 4px solid rgba(0,0,0, .2):
+  border: 4px solid rgba(0,0,0, .2);
+  /*
+   * Custom
+   */
+  bottom: 0;
+  margin-bottom: 30px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .overlay h3 {
   color: #fff;
